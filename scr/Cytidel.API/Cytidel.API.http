@@ -1,0 +1,72 @@
+@Cytidel.API_HostAddress = https://localhost:7129
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYjcxZjhmMGQyMWQ0ZjQzOTNjYjJiMDhkZWE5OGY1ZSIsInVuaXF1ZV9uYW1lIjoiYmI3MWY4ZjBkMjFkNGY0MzkzY2IyYjA4ZGVhOThmNWUiLCJqdGkiOiIxZTE5NjljMC1mOTM3LTRlYWItYTllNS04NDI4NzQxMGY4OTMiLCJpYXQiOiIxNjk3MDA3MzM0IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoidXNlciIsIm5iZiI6MTY5NzAwNzMzNCwiZXhwIjoxNjk3MDEwOTM0LCJpc3MiOiJjeXRpZGVsIn0.1RByTKSBvO_VgTuuhJNdOmU8VPoLb2VfZS8RSmEfQrs
+@taskId = e165ff98-d36c-4490-acde-5a0fab146fb9
+###
+GET {{Cytidel.API_HostAddress}}/
+Accept: application/json
+
+### Check if is Authenticated
+
+GET {{Cytidel.API_HostAddress}}/me
+Authorization: Bearer {{accessToken}}
+
+
+### Get Tasks
+
+Get {{Cytidel.API_HostAddress}}/get-tasks
+Content-Type: application/json
+
+### Get Task
+
+Get {{Cytidel.API_HostAddress}}/get-task/{{taskId}}
+Content-Type: application/json
+
+### Sign Up Request
+
+POST {{Cytidel.API_HostAddress}}/sign-up
+Content-Type: application/json
+
+{
+  "Email": "thiagoddsantos@outlook.com",
+  "Password": "Thi060741@",
+  "FirstName": "Thiago",
+  "LastName": "Santos",
+  "Username": "Thiago Santos"
+}
+
+### Sign In Request
+
+POST {{Cytidel.API_HostAddress}}/sign-in
+Content-Type: application/json
+
+{
+  "Email": "thiagoddsantos@outlook.com",
+  "Password": "Thi060741@"
+}
+
+### Create Task
+
+POST {{Cytidel.API_HostAddress}}/create-task
+Content-Type: application/json
+
+{
+  "Title": "Fisrt Taks",
+  "Description": "Simple Task",
+  "DueTime": "2023-10-12T08:00:00",
+  "Priority": "high",
+  "Status": "pending"
+}
+
+### Edit Task
+
+PUT {{Cytidel.API_HostAddress}}/edit-task
+Content-Type: application/json
+
+{
+  "Id": "{{taskId}}",
+  "Title": "Must be Done",
+  "Description": "Simple Task",
+  "DueTime": "2023-10-12T08:00:00",
+  "Priority": "high",
+  "Status": "in_progress"
+}

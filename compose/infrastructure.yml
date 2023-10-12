@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=thiago
+      - MONGO_INITDB_ROOT_PASSWORD=VeryStrongPassword
+    networks:
+      - cytidel
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+
+networks:
+  cytidel:
+    name: cytidel-network
+
+volumes:
+  mongo:
+    driver: local

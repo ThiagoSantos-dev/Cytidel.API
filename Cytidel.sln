@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34112.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytidel.API", "scr\Cytidel.API\Cytidel.API.csproj", "{54703DD3-1DF0-4CA3-8C63-1B4A550E34B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytidel.Core", "scr\Cytidel.Core\Cytidel.Core.csproj", "{02BE34B6-B4A6-4370-9E43-B139F6AC4530}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytidel.Application", "scr\Cytidel.Application\Cytidel.Application.csproj", "{108603A8-08F4-415C-8514-6CB310D40F78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cytidel.Infrastructure", "scr\Cytidel.Infrastructure\Cytidel.Infrastructure.csproj", "{05C06DC1-EB1E-4808-A90D-437A9B5ABBE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cytidel.Tests.Unit", "scr\Cytidel.Tests.Unit\Cytidel.Tests.Unit.csproj", "{33A6ECA4-4537-4B3D-B97F-F4480722120B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2A68C7F-A32D-46C0-9192-488669DEA922}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54703DD3-1DF0-4CA3-8C63-1B4A550E34B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54703DD3-1DF0-4CA3-8C63-1B4A550E34B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54703DD3-1DF0-4CA3-8C63-1B4A550E34B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54703DD3-1DF0-4CA3-8C63-1B4A550E34B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02BE34B6-B4A6-4370-9E43-B139F6AC4530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02BE34B6-B4A6-4370-9E43-B139F6AC4530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02BE34B6-B4A6-4370-9E43-B139F6AC4530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02BE34B6-B4A6-4370-9E43-B139F6AC4530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108603A8-08F4-415C-8514-6CB310D40F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108603A8-08F4-415C-8514-6CB310D40F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108603A8-08F4-415C-8514-6CB310D40F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108603A8-08F4-415C-8514-6CB310D40F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C06DC1-EB1E-4808-A90D-437A9B5ABBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C06DC1-EB1E-4808-A90D-437A9B5ABBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C06DC1-EB1E-4808-A90D-437A9B5ABBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C06DC1-EB1E-4808-A90D-437A9B5ABBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A6ECA4-4537-4B3D-B97F-F4480722120B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A6ECA4-4537-4B3D-B97F-F4480722120B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A6ECA4-4537-4B3D-B97F-F4480722120B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A6ECA4-4537-4B3D-B97F-F4480722120B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F5434C3-6007-4D94-A926-102C1004F1D9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Omatka.Auth" Version="1.0.1" />
+    <PackageReference Include="Omatka.HTTP" Version="1.0.1" />
+    <PackageReference Include="Omatka.MessageBrokers" Version="1.0.1" />
+    <PackageReference Include="Omatka.MessageBrokers.RabbitMQ" Version="1.0.1" />
+    <PackageReference Include="Omatka.Metrics.AppMetrics" Version="1.0.1" />
+    <PackageReference Include="Omatka.Persistence.MongoDB" Version="1.0.1" />
+    <PackageReference Include="Omatka.Security" Version="1.0.1" />
+    <PackageReference Include="Omatka.WebApi" Version="1.0.1" />
+    <PackageReference Include="Omatka.WebApi.CQRS" Version="1.0.1" />
+    <PackageReference Include="Omatka.WebApi.Security" Version="1.0.1" />
+    <PackageReference Include="Omatka.WebApi.Swagger" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cytidel.Application\Cytidel.Application.csproj" />
+  </ItemGroup>
+
+</Project>

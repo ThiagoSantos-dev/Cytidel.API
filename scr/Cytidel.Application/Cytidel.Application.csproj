@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cytidel.Core\Cytidel.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Omatka.CQRS.Commands" Version="1.0.1" />
+    <PackageReference Include="Omatka.CQRS.Events" Version="1.0.1" />
+    <PackageReference Include="Omatka.CQRS.Queries" Version="1.0.1" />
+  </ItemGroup>
+
+</Project>
