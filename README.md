@@ -15,12 +15,12 @@ mongodb://localhost:27017
 any issues to connect on your local environment please contact me so I can provide a live connection string.
 You can start the service [https] to be able to connect the frontend UI
 
-You can also collect the logs that going to be available on the folder "logs" on the root folder of [Cytidel.API](https://github.com/ThiagoSantos-dev/Cytidel.API/src/Cytidel.API)
+You can also collect the logs that going to be available on the folder "logs" on the root folder of [Cytidel.API](https://github.com/ThiagoSantos-dev/Cytidel.API/tree/master/scr/Cytidel.API)
 
 **What HTTP requests can be sent to the API?**
 ----------------
 
-You can find the list of all HTTP requests in [Cytidel.API.http](https://github.com/ThiagoSantos-dev/Cytidel.API/src/Cytidel.API/Cytidel.API.http) file placed in the root folder of [Cytidel.API](https://github.com/ThiagoSantos-dev/Cytidel.API) repository. 
+You can find the list of all HTTP requests in [Cytidel.API.http](https://github.com/ThiagoSantos-dev/Cytidel.API/tree/master/scr/Cytidel.API/Cytidel.API.http) file placed in the root folder of [Cytidel.API](https://github.com/ThiagoSantos-dev/Cytidel.API/tree/master/scr/Cytidel.API) repository. 
 This file is compatible with [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) plugin for [Visual Studio Code](https://code.visualstudio.com). 
 
 
