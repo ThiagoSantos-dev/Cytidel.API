@@ -28,7 +28,7 @@ Content-Type: application/json
 
 {
   "Email": "thiagoddsantos@outlook.com",
-  "Password": "Thi060741@",
+  "Password": "ThiTest1234@",
   "FirstName": "Thiago",
   "LastName": "Santos",
   "Username": "Thiago Santos"
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 {
   "Email": "thiagoddsantos@outlook.com",
-  "Password": "Thi060741@"
+  "Password": "ThiTest1234@"
 }
 
 ### Create Task
