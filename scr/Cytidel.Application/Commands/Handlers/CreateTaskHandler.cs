@@ -1,15 +1,18 @@
-﻿using Cytidel.Core.Entities;
+﻿using Cytidel.Application.Hubs;
+using Cytidel.Core.Entities;
 using Cytidel.Core.Repositories;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 using Omatka.CQRS.Commands;
 
 namespace Cytidel.Application.Commands.Handlers;
 
 internal sealed class CreateTaskHandler(ITaskRepository taskRepository, 
-    ILogger<CreateTaskHandler> logger) : ICommandHandler<CreateTask>
+    ILogger<CreateTaskHandler> logger, IHubContext<TasksHub> notifyUsers) : ICommandHandler<CreateTask>
 {
     private readonly ILogger<CreateTaskHandler> _logger = logger;
     private readonly ITaskRepository _taskRepository = taskRepository;
+    private readonly IHubContext<TasksHub> _notifyUsers = notifyUsers;
 
     public async Task HandleAsync(CreateTask command, CancellationToken cancellationToken = default)
     {
@@ -21,5 +24,7 @@ internal sealed class CreateTaskHandler(ITaskRepository taskRepository,
             _logger.LogCritical($"Task with id: {task.Id.Value} and title: {task.Title} has {task.Priority} priority!");
         //adding to the database
         await _taskRepository.CreateTaskAsync(task);
+        //notify all connected uses
+        await _notifyUsers.Clients.All.SendAsync("TasksHasUpdated");
     }
 }

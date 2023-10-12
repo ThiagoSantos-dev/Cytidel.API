@@ -2,18 +2,17 @@
 using Cytidel.Application;
 using Cytidel.Application.Commands;
 using Cytidel.Application.Dtos;
+using Cytidel.Application.Hubs;
 using Cytidel.Application.Queries;
 using Cytidel.Application.Services;
 using Cytidel.Core.Repositories;
 using Cytidel.Infrastructure;
 using Microsoft.AspNetCore;
 using Omatka;
-using Omatka.CQRS.Commands;
 using Omatka.Logging;
 using Omatka.Types;
 using Omatka.WebApi;
 using Omatka.WebApi.CQRS;
-using System.Net;
 
 namespace Cytidel.API;
 
@@ -94,7 +93,11 @@ public class Program
                 .Delete<DeleteUser>("delete-user", afterDispatch: (cmd, ctx) => ctx.Response.Accepted())
                 .Put<EditTask>("edit-task", afterDispatch: (cmd, ctx) => ctx.Response.Accepted())
                 )
-            
+            .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapHub<TasksHub>("/hub/tasks");
+                })
+
         )
         .UseLogging()
         .Build()

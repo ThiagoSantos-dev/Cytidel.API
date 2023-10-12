@@ -1,16 +1,20 @@
 ﻿using Cytidel.Application.Exceptions;
+using Cytidel.Application.Hubs;
 using Cytidel.Core.Entities;
 using Cytidel.Core.Repositories;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 using Omatka.CQRS.Commands;
 
 namespace Cytidel.Application.Commands.Handlers;
 
 internal sealed class EditTaskHandler(ITaskRepository taskRepository, 
-    ILogger<CreateTaskHandler> logger) : ICommandHandler<EditTask>
+    ILogger<CreateTaskHandler> logger, IHubContext<TasksHub> notifyUsers) 
+    : ICommandHandler<EditTask>
 {
     private readonly ITaskRepository _taskRepository = taskRepository;
     private readonly ILogger<CreateTaskHandler> _logger = logger;
+    private readonly IHubContext<TasksHub> _notifyUsers = notifyUsers;
     public async Task HandleAsync(EditTask command, CancellationToken cancellationToken = default)
     {
         //check if exists on the database.
@@ -25,5 +29,7 @@ internal sealed class EditTaskHandler(ITaskRepository taskRepository,
             _logger.LogCritical($"Task with id: {updatedTask.Id.Value} and title: {updatedTask.Title} has been updated and is {updatedTask.Priority} priority!");
         //update the task on the database.
         await _taskRepository.UpdateTaskAsync(updatedTask);
+        //notify all connected uses
+        await _notifyUsers.Clients.All.SendAsync("TasksHasUpdated");
     }
 }

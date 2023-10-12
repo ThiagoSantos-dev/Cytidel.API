@@ -28,6 +28,7 @@ using Omatka.Security;
 using Omatka.WebApi;
 using Omatka.WebApi.CQRS;
 using Omatka.WebApi.Swagger;
+using Swashbuckle.AspNetCore.ReDoc;
 using System.Text;
 using SecurityKey = Cytidel.Infrastructure.Types.SecurityKey;
 
@@ -63,6 +64,7 @@ public static class Extensions
                 .AddHttpClient()
                 .AddExceptionToMessageMapper<ExceptionToMessageMapper>()
                 .AddMongo()
+                .AddSignalR()
                 .AddMetrics()
                 .AddMongoRepository<ToDoTaskDocument, Guid>("tasks")
                 .AddMongoRepository<UserDocument, Guid>("users")
@@ -82,6 +84,19 @@ public static class Extensions
             .UseAuthentication()
             .UseAuthorization();
         return app;
+    }
+    //add signalR
+    internal static IOmatkaBuilder AddSignalR(this IOmatkaBuilder builder)
+    {
+        var options = builder.GetOptions<SignalrOptions>("signalR");
+        builder.Services.AddSingleton(options);
+        var signalR = builder.Services.AddSignalR(options =>
+        {
+            options.KeepAliveInterval = TimeSpan.FromMilliseconds(1200000);
+            options.ClientTimeoutInterval = TimeSpan.FromMilliseconds(900000);
+            options.EnableDetailedErrors = true;
+        });
+        return builder;
     }
     //Get the correlation Context from the request or message
     internal static CorrelationContext GetCorrelationContext(this IHttpContextAccessor accessor)
